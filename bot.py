@@ -1,4 +1,5 @@
 import os
+import asyncio
 import sqlite3
 import random
 import string
@@ -781,7 +782,8 @@ def main():
     )
 
     print("Bot is running...")
-
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
     app.run_polling()
 
 
